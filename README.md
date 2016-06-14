@@ -25,7 +25,10 @@ Output example:
     }
 
 ##Why
-This was implemented to replace an existing implementation of logspout that was supposed to be achieving similar results, but failing to do so.
+Designed with CoreOS and AWS in mind.
+* Collects Kubernetes metadata
+* Collects Docker logs
+* Ships to redis
 
 ##Running
 To run this with the configuration specified in this repo simply pull bpsizemore/docker-fluent-redis and run the container on your host. To run with your own customizations, I suggest you clone the repo, modify the dockerfile and config file as you see fit and then do:
