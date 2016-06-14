@@ -1,4 +1,4 @@
-FROM fluent/fluentd
+FROM fluent/fluentd:v0.12.26
 MAINTAINER shanestarcher@gmail.com
 
 RUN gem install -N fluent-plugin-docker_metadata_filter
@@ -13,5 +13,7 @@ USER root
 ENV REDIS_HOST logging.private
 ENV REDIS_PORT 6379
 VOLUME ["/fluent/containers"]
+
+COPY fluent.conf /fluentd/etc/
 
 
