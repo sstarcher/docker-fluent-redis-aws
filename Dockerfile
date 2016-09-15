@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v0.14.1
+FROM fluent/fluentd:v0.14-latest
 MAINTAINER shanestarcher@gmail.com
 
 RUN gem install -N fluent-plugin-docker_metadata_filter
