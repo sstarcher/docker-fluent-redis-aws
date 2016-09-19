@@ -5,6 +5,7 @@ USER root
 RUN apk --no-cache --update add ruby-dev build-base && \
     gem install -N json && \
     apk del build-base ruby-dev
+USER fluent    
 
 RUN gem install -N fluent-plugin-docker_metadata_filter
 RUN gem install -N fluent-plugin-redis-store
@@ -17,7 +18,7 @@ RUN gem install -N fluent-plugin-ec2-metadata
 ENV REDIS_HOST logging.private
 ENV REDIS_PORT 6379
 ENV FLUENTD_OPT "-qq"
-VOLUME ["/fluent/containers"]
+VOLUME ["/fluentd/log/containers"]
 
 COPY fluent.conf /fluentd/etc/
 
