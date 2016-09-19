@@ -5,7 +5,6 @@ USER root
 RUN apk --no-cache --update add ruby-dev build-base && \
     gem install -N json && \
     apk del build-base ruby-dev
-USER fluent
 
 RUN gem install -N fluent-plugin-docker_metadata_filter
 RUN gem install -N fluent-plugin-redis-store
