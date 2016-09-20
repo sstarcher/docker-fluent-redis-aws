@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v0.14-latest
+FROM fluent/fluentd:v0.14.1
 MAINTAINER shanestarcher@gmail.com
 
 USER root
@@ -16,7 +16,6 @@ RUN gem install -N fluent-plugin-ec2-metadata
 
 ENV REDIS_HOST logging.private
 ENV REDIS_PORT 6379
-ENV FLUENTD_OPT "-qq"
 VOLUME ["/fluentd/log/containers"]
 
 COPY fluent.conf /fluentd/etc/
