@@ -1,4 +1,4 @@
-FROM fluent/fluentd:v0.14.1
+FROM fluent/fluentd:v0.14.6
 MAINTAINER shanestarcher@gmail.com
 
 USER root
